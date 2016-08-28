@@ -9,8 +9,8 @@
 <body>
 <h1>Please Register</h1>
 Full Name:<input type="text" name="txtFullName"><br>
-Gender:<input type="radio" name="rdGender" value="Male">
-<input type="radio" name="rdGender" value="Female"><br>
+Gender:<input type="radio" name="rdGender" value="Male">Male
+<input type="radio" name="rdGender" value="Female">Female<br>
 State: <input type="text" name="txtState"><br>
 City: <input type="text" name="txtCity"><br>
 Street: <input type="text" name="txtStreet"><br>

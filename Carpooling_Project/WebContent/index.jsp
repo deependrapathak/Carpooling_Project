@@ -10,7 +10,7 @@
 <h1>Log In</h1>
 Email:<input type="text" name="txtName">
 Password:<input type="password" name="txtPassword">
-<input type="submit"><br>
+<input type="submit" value="LogIn"><br>
 <h3><a href="Register.jsp">New User Register Here</a></h3>
 </body>
 </html>
