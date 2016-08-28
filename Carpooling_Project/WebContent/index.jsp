@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Log In</title>
 </head>
 <body>
-<h1>Hello demo</h1>
+<h1>Log In</h1>
+Email:<input type="text" name="txtName">
+Password:<input type="password" name="txtPassword">
+<input type="submit"><br>
+<h3><a href="Register.jsp">New User Register Here</a></h3>
 </body>
 </html>
