@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.car.Model.UserProcessing;
+
 /**
  * Servlet implementation class UserServlet
  */
@@ -27,23 +29,37 @@ public class UserServlet extends HttpServlet {
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
+		
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String name=request.getParameter("txtFullName");
+		String gender=request.getParameter("rdGender");
+		String state=request.getParameter("txtState");
+		String city=request.getParameter("txtCity");
+		String street=request.getParameter("txtStreet");
+		int zip=Integer.parseInt(request.getParameter("txtZipCode"));
+		int birth=Integer.parseInt(request.getParameter("txtBirthYear"));
+		String email=request.getParameter("txtEmail");
+		String password=request.getParameter("txtPassword");
+		UserProcessing user=new UserProcessing();
+		System.out.println(name);
+		try {
+			user.insertUser(name, gender, state, city,street, zip, birth, email, password);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

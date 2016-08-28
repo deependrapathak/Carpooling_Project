@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>Please Register</h1>
+<form action="UserServlet" method="post">
 Full Name:<input type="text" name="txtFullName"><br>
 Gender:<input type="radio" name="rdGender" value="Male">Male
 <input type="radio" name="rdGender" value="Female">Female<br>
@@ -19,5 +20,6 @@ Birth Year: <input type="text" name="txtBirthYear"><br>
 Email: <input type="text" name="txtEmail"><br>
 Password:<input type="password" name="txtPassword"><br>
 <input type="submit" value="Register">
+</form>
 </body>
 </html>
