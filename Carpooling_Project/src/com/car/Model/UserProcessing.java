@@ -16,7 +16,8 @@ public class UserProcessing  {
 			System.out.println(name+gender+state);
 			Connection con=getConnection();
 			System.out.println("after");
-			String insert="insert into users(fullname,gender,state,city,street,zipcode,birthyear,email,password) values ('"+name+"',"+m+",'"+state+"','"+city+"','"+street+"',"+zip+","+birthyear+",'"+mail+"','"+Password+"')";
+			String insert="insert into users(fullname,gender,state,city,street,zipcode,birthyear,email,password) "
+					+ "values ('"+name+"',"+m+",'"+state+"','"+city+"','"+street+"',"+zip+","+birthyear+",'"+mail+"',"+"md5('"+Password+"'))";
 				PreparedStatement stat=con.prepareStatement(insert);
 				stat.executeUpdate();
 		}
