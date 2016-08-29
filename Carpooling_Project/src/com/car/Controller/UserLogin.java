@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.car.Model.UserProcessing;
 
 /**
- * Servlet implementation class UserServlet
+ * Servlet implementation class UserLogin
  */
-@WebServlet("/UserServlet")
-public class UserServlet extends HttpServlet {
+@WebServlet("/UserLogin")
+public class UserLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserServlet() {
+    public UserLogin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,7 +29,7 @@ public class UserServlet extends HttpServlet {
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		
+		// TODO Auto-generated method stub
 	}
 
 	/**
@@ -43,32 +43,23 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name=request.getParameter("txtFullName");
-		String gender=request.getParameter("rdGender");
-		String state=request.getParameter("txtState");
-		String city=request.getParameter("txtCity");
-		String street=request.getParameter("txtStreet");
-		int zip=Integer.parseInt(request.getParameter("txtZipCode"));
-		int birth=Integer.parseInt(request.getParameter("txtBirthYear"));
-		String email=request.getParameter("txtEmail");
-		String password=request.getParameter("txtPassword");
+		String logInEmail=request.getParameter("txtEmailLogin");
+		String logInPassword=request.getParameter("txtPasswordLogin");
 		UserProcessing user=new UserProcessing();
-		//System.out.println(name);
-		boolean regFlag=false;
+		//System.out.println(logInEmail+logInPassword);
+		boolean flag=false;
 		try {
-			regFlag=user.insertUser(name, gender, state, city,street, zip, birth, email, password);
+			flag = user.checkLogin(logInEmail, logInPassword);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(regFlag){
+		if(flag){
 			request.getRequestDispatcher("result.jsp").forward(request, response);
-
 		}
 		else{
 			request.getRequestDispatcher("error.jsp").forward(request, response);
 		}
-		
 	}
 
 }

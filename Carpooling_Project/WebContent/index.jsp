@@ -19,13 +19,13 @@
 					<div class="arrow-up"></div>
 					<div class="formholder">
 						<div class="randompad">
-						<form action="Register.jsp" method="post">
+						<form action="UserLogin" method="post">
 							<fieldset>
 							
 								<label name="email">Email</label>
-								 <input type="email" placeholder="example@example.com" />
-								  <label name="password">Password</label>
-								<input type="password" />
+								 <input type="email" placeholder="example@example.com" name="txtEmailLogin" />
+								  <label name="password" >Password</label>
+								<input type="password" name="txtPasswordLogin" />
 								 <input type="submit" value="Login" />
 
 							</fieldset>
