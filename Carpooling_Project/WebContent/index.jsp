@@ -23,7 +23,7 @@
 							<fieldset>
 							
 								<label name="email">Email</label>
-								 <input type="email" value="example@example.com" />
+								 <input type="email" placeholder="example@example.com" />
 								  <label name="password">Password</label>
 								<input type="password" />
 								 <input type="submit" value="Login" />

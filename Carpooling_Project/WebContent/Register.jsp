@@ -5,21 +5,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Register</title>
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
-<h1>Please Register</h1>
-<form action="UserServlet" method="post">
-Full Name:<input type="text" name="txtFullName"><br>
-Gender:<input type="radio" name="rdGender" value="Male">Male
+<div class="randompad">
+<div id="formcenter">
+<div class="formholderr">
+<h1 id="h1reg">Please Register</h1>
+<form action="UserServlet" method="post" id="formreg">
+
+<label>Full Name:</label><input type="text" name="txtFullName"><br>
+<label>Gender: </label><input type="radio" name="rdGender" value="Male">Male
 <input type="radio" name="rdGender" value="Female">Female<br>
-State: <input type="text" name="txtState"><br>
-City: <input type="text" name="txtCity"><br>
-Street: <input type="text" name="txtStreet"><br>
-Zip Code: <input type="text" name="txtZipCode"><br>
-Birth Year: <input type="text" name="txtBirthYear"><br>
-Email: <input type="text" name="txtEmail"><br>
-Password:<input type="password" name="txtPassword"><br>
+<label>State: </label> <input type="text" name="txtState"><br>
+<label>City: </label><input type="text" name="txtCity"><br>
+<label>Street: </label><input type="text" name="txtStreet"><br>
+<label>Zip Code: </label><input type="text" name="txtZipCode" pattern="[\d]{5}" title="five digit number only"><br>
+<label>Birth Year: </label><input type="text" name="txtBirthYear" pattern="[\d]{4}" title="Invalid year four digit number"><br>
+<label>Email: </label><input type="email" name="txtEmail"><br>
+<label>Password: </label><input type="password" name="txtPassword" pattern="(?=\d+)(?=[a-z]+)(?=[A-Z]+).{6,}" title="Password should be minimum 6 char and one number one capital and one small letter required"><br>
 <input type="submit" value="Register">
+
 </form>
+</div>
+</div>
+</div>
 </body>
 </html>
