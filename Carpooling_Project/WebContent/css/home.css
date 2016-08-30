@@ -44,6 +44,19 @@ body {
 	margin-left: 30%;
 }
 #postmenu{
-	height: 50px;
+	height: 60px;
 	background: green;
+	text-align: center;
+	font-size: 25px;
+}
+#ulmenu{
+	
+	
+}
+#ulmenu li{
+	padding: 2px;
+	display: inline;
+	list-style-type: none;
+	text-decoration: underline;
+	color: aqua;
 }

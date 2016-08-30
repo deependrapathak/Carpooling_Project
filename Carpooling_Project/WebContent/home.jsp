@@ -14,7 +14,16 @@
 <%ArrayList<String> ar=(ArrayList<String>)request.getAttribute("data"); %>
 <div id="postcontainer">
 <div id="postmenu">
- <c:custom textColor='yellow' text='CARPOOLING'/> 
+ <c:custom textColor='yellow' text='CARPOOLING'/> <br>
+ <ul id="ulmenu">
+ <li>Ask Ride</li>
+ <li>Offer ride</li>
+ <li>Update Profile</li>
+ <li>Weather</li>
+ <li>Delete Post</li>
+ 
+ 
+ </ul>
 </div>
 <div id="postdiv">
 <textarea rows="8" cols="80" ></textarea><br><br>
