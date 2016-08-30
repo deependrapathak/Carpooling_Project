@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="hait"%>
+<%@ taglib prefix="c" uri="/WEB-INF/CustomTag/customtag" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +14,7 @@
 <%ArrayList<String> ar=(ArrayList<String>)request.getAttribute("data"); %>
 <div id="postcontainer">
 <div id="postmenu">
-<c:bold textColor="yellow" text="CARPOOLING"/>
+ <c:custom textColor='yellow' text='CARPOOLING'/> 
 </div>
 <div id="postdiv">
 <textarea rows="8" cols="80" ></textarea><br><br>
