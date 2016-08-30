@@ -1,4 +1,4 @@
-package com.car.db;
+package com.car.dto;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

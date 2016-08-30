@@ -8,19 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.car.Model.UserProcessing;
+import com.car.business.UserProcessing;
 
 /**
  * Servlet implementation class UserServlet
  */
 @WebServlet("/UserServlet")
-public class UserServlet extends HttpServlet {
+public class UserRegistration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserServlet() {
+    public UserRegistration() {
         super();
         // TODO Auto-generated constructor stub
     }

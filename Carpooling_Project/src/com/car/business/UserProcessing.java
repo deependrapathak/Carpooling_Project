@@ -1,12 +1,10 @@
-package com.car.Model;
+package com.car.business;
 
 import java.security.MessageDigest;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-//import com.car.db.DBconnection;
+import com.car.dto.DBconnection;
 
 public class UserProcessing  {
 	public boolean insertUser(String name,String gender,String state,String city,String street,int zip,int birthyear,String mail,String Password) throws Exception{
@@ -32,7 +30,7 @@ public class UserProcessing  {
 				m=0;
 			}
 			//System.out.println(name+gender+state);
-			Connection con=getConnection();
+			Connection con=DBconnection.getConnection();
 			System.out.println("after");
 			String insert="insert into users(fullname,gender,state,city,street,zipcode,birthyear,email,password) "
 					+ "values ('"+name+"',"+m+",'"+state+"','"+city+"','"+street+"',"+zip+","+birthyear+",'"+mail+"',"+"'"+emailmd+"')";
@@ -57,7 +55,7 @@ public class UserProcessing  {
 		}
 		emailmd=sb.toString();
 		System.out.println(emailmd);
-		Connection con=getConnection();
+		Connection con=DBconnection.getConnection();
 		String query="select email,password from users";
 		PreparedStatement stat=con.prepareStatement(query);
 		ResultSet res=stat.executeQuery();
@@ -71,24 +69,5 @@ public class UserProcessing  {
 		
 		return false;
 	}
-	public static Connection getConnection()throws Exception{
-		Connection con;
-		try{
-			String driver="com.mysql.jdbc.Driver";
-			String url="jdbc:mysql://localhost:3306/carpooling";
-			String username="root";
-			String password="";
-			Class.forName(driver);
-			con=DriverManager.getConnection(url, username, password);
-			System.out.println("Connected");
-			return con;
-		}
-		catch(Exception e){
-			System.out.println(e.toString());
-			
-		}
-		return null;
-		
-	}
-
+	
 }

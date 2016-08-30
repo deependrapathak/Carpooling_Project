@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Sans-serif;
+  background: #2c3e50;
+}
+.post{
+	background-color: aqua;
+	width:80%;
+	margin-left: 10%;
+	margin-right:10%;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#postdiv{
+	background: #2c3e50;
+	width:80%;
+	margin-left: 10%;
+	margin-right:10%;
+	margin-top:10px;
+	margin-bottom:10px;
+	text-align: center;
+}
+#postdiv input[type='submit']{
+	height: 30px;
+	length:100px;
+}
+#postdiv input[type='textarea']{
+	}
+#postcontainer{
+	width:80%;
+	margin-left: 10%;
+	margin-right:10%;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.posta{
+	text-decoration: none;
+	margin-left: 30%;
+}
+#postmenu{
+	height: 50px;
+	background: green;
+}

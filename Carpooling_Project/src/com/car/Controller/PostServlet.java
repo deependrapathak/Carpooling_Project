@@ -1,36 +1,30 @@
 package com.car.Controller;
 
 import java.io.IOException;
-import javax.servlet.ServletConfig;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.car.business.UserProcessing;
+import com.car.business.PostProcessing;
 
 /**
- * Servlet implementation class UserLogin
+ * Servlet implementation class PostServlet
  */
-@WebServlet("/UserLogin")
-public class UserLogin extends HttpServlet {
+@WebServlet("/PostServlet")
+public class PostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserLogin() {
+    public PostServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see Servlet#init(ServletConfig)
-	 */
-	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
-	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -43,23 +37,16 @@ public class UserLogin extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String logInEmail=request.getParameter("txtEmailLogin");
-		String logInPassword=request.getParameter("txtPasswordLogin");
-		UserProcessing user=new UserProcessing();
-		//System.out.println(logInEmail+logInPassword);
-		boolean flag=false;
+	//response.getWriter().println("login");
+		ArrayList<String> al=new ArrayList<>();
+		PostProcessing pp=new PostProcessing();
 		try {
-			flag = user.checkLogin(logInEmail, logInPassword);
+			al=pp.show();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(flag){
-			request.getRequestDispatcher("PostServlet").forward(request, response);
-		}
-		else{
-			request.getRequestDispatcher("error.jsp").forward(request, response);
-		}
+		request.setAttribute("data", al);
+		request.getRequestDispatcher("home.jsp").forward(request, response);
 	}
-
 }
