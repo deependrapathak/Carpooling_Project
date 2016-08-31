@@ -55,7 +55,7 @@ public class UserLogin extends HttpServlet {
 			e.printStackTrace();
 		}
 		if(flag){
-			request.getRequestDispatcher("PostServlet").forward(request, response);
+			request.getRequestDispatcher("home.jsp").forward(request, response);
 		}
 		else{
 			request.getRequestDispatcher("error.jsp").forward(request, response);

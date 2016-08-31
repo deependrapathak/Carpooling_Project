@@ -4,18 +4,51 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.car.dto.DBconnection;
+import com.car.model.PostObject;
 
 
 public class PostProcessing {
-	int count=0;
+	/*public String InsertMessage(Connection connection, HttpServletRequest request, HttpServletResponse response){
+		return null;
+		
+	}*/
+	public ArrayList<String> GetMessage(){
+		ArrayList postData=new ArrayList();
+		try{
+			PreparedStatement ps=DBconnection.getConnection().prepareStatement("select * from posts");
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()){
+				PostObject postobject=new PostObject();
+				postobject.setPostid(Integer.parseInt(rs.getString("postid")));
+				postobject.setUserid(Integer.parseInt(rs.getString("userid")));
+				postobject.setPosttype(Integer.parseInt(rs.getString("posttype")));
+				postobject.setPost(rs.getString("post"));
+				postobject.setDatecreated(rs.getString("datecreated"));
+				postobject.setDatecreated(rs.getString("dateupdated"));
+				postData.add(postobject);
+			}
+			return postData;
+		}
+		catch(Exception ex){
+			System.out.println(ex.toString());
+		}
+		
+		return null;
+		
+	}
+	/*int count=0;
 	
 	public  ArrayList<String> show() throws Exception{
 		try{
@@ -57,5 +90,5 @@ public class PostProcessing {
 		file.createNewFile();
 		FileWriter writer=new FileWriter("z:\\test.json");
 		return writer;
-	}
+	}*/
 }

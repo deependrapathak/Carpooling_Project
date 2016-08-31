@@ -32,7 +32,7 @@ body {
 }
 #postdiv input[type='textarea']{
 	}
-#postcontainer{
+#postcontainer,{
 	width:80%;
 	margin-left: 10%;
 	margin-right:10%;
@@ -59,4 +59,19 @@ body {
 	list-style-type: none;
 	text-decoration: underline;
 	color: aqua;
+}
+.msg{
+	background-color:aqua;
+	width:80%;
+	margin-left: 10%;
+	margin-right:10%;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.pride{
+	color:red;
+	text-align: center;
+	font-weight: bold;
+	margin-top:5px;
+	margin-bottom:5px;
 }

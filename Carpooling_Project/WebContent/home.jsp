@@ -7,12 +7,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home</title>
-<script type="text/javascript" src="load.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/load.js"></script>
 <link rel="stylesheet" href="css/home.css">
+
 </head>
 <body>
-<%ArrayList<String> ar=(ArrayList<String>)request.getAttribute("data"); %>
+<%-- <%ArrayList<String> ar=(ArrayList<String>)request.getAttribute("data"); %> --%>
 <div id="postcontainer">
+
 <div id="postmenu">
  <c:custom textColor='yellow' text='CARPOOLING'/> <br>
  <ul id="ulmenu">
@@ -32,11 +35,12 @@
 
 </div>
 </div>
-<div >
-<%for(int i=0;i<ar.size()-1;i++){
+<div id="ajdiv">
+<%-- <%for(int i=0;i<ar.size()-1;i++){
 	out.println("<div class='post'><p>"+ar.get(i)+"</p>"+
 "<a href='#' class='posta'>  Like   </a><a href='#' class='posta'>  Comment   </a></div>");
-} %>
+} %> --%>
+<%-- <%=request.getAttribute("msg") %>--%>
 </div>
 </body>
 </html>
