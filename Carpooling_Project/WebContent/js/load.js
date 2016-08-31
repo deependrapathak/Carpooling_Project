@@ -15,5 +15,17 @@ $(function(){
 $("#btnLogout").click(function(){
 	 window.location.href="index.jsp";
 });	
-	
+	$(document.body).on("click",'.comment',function(){
+		var self=$(this);
+		$.post('CommentServlet',{postId:$(this).attr("data-postid")}).done(function(response){
+		var content="";	
+		$.each(response.Message,function(uid,value){
+			content+="<h4>"+value.comment+"</h4>";
+		})
+		content+="<form action='' method=''>"+"<input type='textarea' /><br><input type='submit' value='comment'/></form>"
+		self.parent().append(content);
+		}).fail(function(xhr,status,exception){
+			console.log(1);
+		})
+	})
 })
