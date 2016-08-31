@@ -13,6 +13,13 @@
 
 </head>
 <body>
+<%
+String sessr=(String) session.getAttribute("reg");
+if(sessr.equals("")||sessr==null){
+	response.sendRedirect("index.jsp");
+}
+
+%>
 <%-- <%ArrayList<String> ar=(ArrayList<String>)request.getAttribute("data"); %> --%>
 <div id="postcontainer">
 
@@ -24,9 +31,11 @@
  <li>Update Profile</li>
  <li>Weather</li>
  <li>Delete Post</li>
- 
- 
  </ul>
+ <div id="sessiondiv">
+ <%=session.getAttribute("reg") %><br>
+ <button id="btnLogout">Logout</button>
+ </div>
 </div>
 <div id="postdiv">
 <textarea rows="8" cols="80" ></textarea><br><br>

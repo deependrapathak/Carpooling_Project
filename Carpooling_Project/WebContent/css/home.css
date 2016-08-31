@@ -25,6 +25,7 @@ body {
 	margin-top:10px;
 	margin-bottom:10px;
 	text-align: center;
+	clear:both;
 }
 #postdiv input[type='submit']{
 	height: 30px;
@@ -48,6 +49,7 @@ body {
 	background: green;
 	text-align: center;
 	font-size: 25px;
+	position: relative;
 }
 #ulmenu{
 	
@@ -74,4 +76,17 @@ body {
 	font-weight: bold;
 	margin-top:5px;
 	margin-bottom:5px;
+}
+#sessiondiv{
+	float:right;
+	color:red;
+	text-decoration: underline;
+	position:absolute;
+	right:0;
+	top:0;
+}
+#btnLogout{
+	width:100px;
+	height:30px;
+	background-color: red;
 }

@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.car.business.UserProcessing;
 
@@ -43,6 +44,7 @@ public class UserRegistration extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session=request.getSession();
 		String name=request.getParameter("txtFullName");
 		String gender=request.getParameter("rdGender");
 		String state=request.getParameter("txtState");
@@ -62,7 +64,8 @@ public class UserRegistration extends HttpServlet {
 			e.printStackTrace();
 		}
 		if(regFlag){
-			request.getRequestDispatcher("result.jsp").forward(request, response);
+			session.setAttribute("reg", email);
+			request.getRequestDispatcher("home.jsp").forward(request, response);
 
 		}
 		else{

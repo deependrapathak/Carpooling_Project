@@ -12,5 +12,7 @@ $(function(){
 	}).fail(function(xhr,status,exception){
 		console.log(1);
 	})
-	
+$("#btnLogout").click(function(){
+	 window.location.href="index.jsp";
+});	
 })
