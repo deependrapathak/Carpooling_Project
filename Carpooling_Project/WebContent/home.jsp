@@ -38,10 +38,11 @@ if(sessr.equals("")||sessr==null){
  </div>
 </div>
 <div id="postdiv">
-<textarea rows="8" cols="80" ></textarea><br><br>
-<label>Type :</label><input type="radio" name="rdType"> Offer Ride  <input type="radio" name="rdType">Take Ride<br><br>
-<input type="submit" value="    post   ">
-
+<form action="InsertPost" method="post">
+<textarea rows="4" cols="80" name="txtPost"></textarea><br><br>
+<label>Type :</label><input type="radio" name="rdType" value="offerride"> Offer Ride  <input type="radio" name="rdType">Take Ride<br><br>
+<input type="submit" value="         Post        ">
+</form>
 </div>
 </div>
 <div id="ajdiv">

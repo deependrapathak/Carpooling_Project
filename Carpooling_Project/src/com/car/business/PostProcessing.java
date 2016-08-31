@@ -27,7 +27,7 @@ public class PostProcessing {
 	public ArrayList<String> GetMessage(){
 		ArrayList postData=new ArrayList();
 		try{
-			PreparedStatement ps=DBconnection.getConnection().prepareStatement("select * from posts");
+			PreparedStatement ps=DBconnection.getConnection().prepareStatement("select * from posts order by dateupdated DESC;");
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()){
 				PostObject postobject=new PostObject();

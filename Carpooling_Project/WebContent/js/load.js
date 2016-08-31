@@ -5,7 +5,7 @@ $(function(){
 			$.each(exp.Message,function(i,data){
 				var msg_data="";
 				msg_data+="<div class='msg'><p class='pride'>Offering Ride share</p>";
-				msg_data+=data.post+"</div>";
+				msg_data+=data.post+"<br><button class='like' data-postid=\""+data.postid+"\">Like</button>              <button class='comment' data-postid=\""+data.postid+"\">Comment</button></div>";
 				$("#ajdiv").append(msg_data);
 			})	
 	
@@ -15,4 +15,5 @@ $(function(){
 $("#btnLogout").click(function(){
 	 window.location.href="index.jsp";
 });	
+	
 })
