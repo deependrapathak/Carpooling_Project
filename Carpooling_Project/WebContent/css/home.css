@@ -90,7 +90,13 @@ body {
 	height:30px;
 	background-color: red;
 }
-input []type="submit"]{
+input [type="submit"]{
 	color:black;
 	background-color: aqua;
+}
+.pcomment{
+	color:blue;
+}
+h4 p{
+	color:blue;
 }

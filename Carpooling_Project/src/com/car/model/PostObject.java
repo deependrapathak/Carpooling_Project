@@ -9,6 +9,13 @@ public class PostObject {
 	private int posttype;
 	private String datecreated;
 	private String dateupdated;
+	private String name;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public int getPostid() {
 		return postid;
 	}

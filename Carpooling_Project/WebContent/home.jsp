@@ -39,7 +39,7 @@ if(sessr.equals("")||sessr==null){
 </div>
 <div id="postdiv">
 <form action="InsertPost" method="post">
-<textarea rows="4" cols="80" name="txtPost"></textarea><br><br>
+<textarea rows="4" cols="80" name="txtPost" placeholder="What's on your mind..."></textarea><br><br>
 <label>Type :</label><input type="radio" name="rdType" value="offerride"> Offer Ride  <input type="radio" name="rdType">Take Ride<br><br>
 <input type="submit" value="         Post        ">
 </form>

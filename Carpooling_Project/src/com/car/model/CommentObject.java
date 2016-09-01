@@ -11,6 +11,14 @@ private int postid;
 private String comment;
 private String datecreated;
 private String dateupdated;
+private String fullname;
+
+public String getFullname() {
+	return fullname;
+}
+public void setFullname(String fullname) {
+	this.fullname = fullname;
+}
 public int getCommentid() {
 	return commentid;
 }

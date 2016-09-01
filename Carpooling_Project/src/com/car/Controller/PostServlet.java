@@ -62,7 +62,7 @@ public class PostServlet extends HttpServlet {
 		Gson gson=new Gson();
 		String message=gson.toJson(pos.GetMessage());
 		out.println("{\"Message\":"+message+"}");
-		//System.out.println(message);
+		System.out.println(message);
 		/*File file=new File("z:\\test.json");
 		file.createNewFile();
 		FileWriter writer=new FileWriter("z:\\test.json");

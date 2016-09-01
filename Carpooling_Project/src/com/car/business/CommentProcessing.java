@@ -11,7 +11,7 @@ import com.car.model.CommentObject;
 public class CommentProcessing {
 public ArrayList<String> getMessage() throws SQLException, Exception{
 	ArrayList comObject=new ArrayList();
-	PreparedStatement ps=DBconnection.getConnection().prepareStatement("select * from comments;");
+	PreparedStatement ps=DBconnection.getConnection().prepareStatement("select u.fullname,c.userid,c.commentid,c.postid,c.datecreated,c.dateupdated,c.comment from users u INNER JOIN comments c inner join posts p on p.postid=c.postid and u.userid=c.userid");
 	ResultSet rs=ps.executeQuery();
 	while(rs.next()){
 		CommentObject com=new CommentObject();
@@ -21,10 +21,11 @@ public ArrayList<String> getMessage() throws SQLException, Exception{
 		com.setComment(rs.getString("comment"));
 		com.setDatecreated(rs.getString("datecreated"));
 		com.setDateupdated(rs.getString("dateupdated"));
+		com.setFullname(rs.getString("fullname"));
 		comObject.add(com);
 	}
 	
-		
+	System.out.println(comObject.toString());
 	return comObject;
 } 
 }
