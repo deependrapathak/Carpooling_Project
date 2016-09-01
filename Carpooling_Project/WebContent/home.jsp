@@ -28,7 +28,7 @@ if(sessr.equals("")||sessr==null){
  <ul id="ulmenu">
  <li>Ask Ride</li>
  <li>Offer ride</li>
- <li>Update Profile</li>
+ <li><a href="updateProfile.jsp">Update Profile</a></li>
  <li><a href="weathermap.html">Weather</a></li>
  <li>Delete Post</li>
  </ul>

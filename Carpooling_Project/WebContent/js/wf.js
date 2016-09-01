@@ -56,10 +56,15 @@
 	       	 
 	       	 var content="";
 	         $("#bothWeather").empty();
-	         var Scity=$("#start").val();
-	         getWeather(Scity);
-	         var Ecity=$("#end").val(); 
-	         getWeather(Ecity); 
+	         var Scity="";
+	         var Ecity="";
+	         $("#bothWeather").empty();
+	         Scity=$("#start").val();
+	         Ecity=$("#end").val(); 
+	        if(Scity!="" && Ecity!=""){
+	        	 getWeather(Scity);
+		         getWeather(Ecity);
+	        }
 	         //getting the weather information by city
 	        function getWeather(city){
 	        								$.get("http://api.openweathermap.org/data/2.5/weather?q="+city+",us&units=metric&mode=json&appid=e464bf3e13849921887950f827be20f5")

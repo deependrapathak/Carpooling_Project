@@ -70,4 +70,22 @@ public class UserProcessing  {
 		return false;
 	}
 	
+
+
+	public boolean updateUser(String name,String state,String city,String street,int zip,int birthyear,String email) throws Exception{
+		boolean flag=false;
+		Connection con=DBconnection.getConnection();
+		String query="update users set fullname='"+name+"',state='" +state+"',city='" +city+"',street='" +street+"' ,"
+					  + "zipcode='" +zip+"' ,birthyear='" +birthyear+"'where email='"+email+"'";
+		System.out.println(query);
+		PreparedStatement stat=con.prepareStatement(query);
+		stat.executeUpdate();
+		flag=true;
+		System.out.println(flag);
+			return flag;
+		
+	
+	}
+
+	
 }

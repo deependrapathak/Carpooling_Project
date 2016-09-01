@@ -6,8 +6,7 @@ $(function(){
 	$.post("PostServlet").done(function(exp){
 			x=exp;
 			$.each(exp.Message,function(i,data){
-				y=data;
-				z=data.name;
+			
 				var msg_data="";
 				msg_data+="<div class='msg'><p class='pride'>"+data.name+"</p>";
 				msg_data+=data.post+"<br><button class='like' data-postid=\""+data.postid+"\">Like</button>              <button class='comment' data-postid=\""+data.postid+"\">Comment</button></div>";
@@ -22,19 +21,26 @@ $("#btnLogout").click(function(){
 });	
 	$(document.body).on("click",'.comment',function(){
 		var self=$(this);
-		$.post('CommentServlet',{postId:$(this).attr("data-postid")}).done(function(response){
-		var content="";	
+		
+		//,{postId:$(this).attr("data-postid")}
+		$.post('CommentServlet').done(function(response){
+		x=response;
+		y=response.Message;
+			var content="";	
 		$.each(response.Message,function(uid,value){
 			content+="<h4><p class='pcomment'>"+value.fullname+" has commented as:</p>"+value.comment+"</h4>";
+			a=value.postid;
 		})
-		content+="<form action='InsertComment' method='post'><input type='hidden'><input type='textarea' name='txtcomment' /><br><input type='submit' value='comment'/></form>"
+		//a=response.Message.postid;
+		//a=$(this).attr("data-postid");
+		content+="<form action='InsertComment' method='post'><input type='hidden' value='"+a+"' name='txthidden'><input type='textarea' name='txtcomment' /><br><input type='submit' value='comment'/></form>"
 		self.parent().append(content);
 		}).fail(function(xhr,status,exception){
 			console.log(1);
 		})
 	})
 	$(document.body).on("click",'.like',function(){
-		a=this;
+		
 		var self=$(this);
 		self.css('background-color','blue');
 	})
