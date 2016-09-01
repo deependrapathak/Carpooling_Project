@@ -29,7 +29,7 @@ if(sessr.equals("")||sessr==null){
  <li>Ask Ride</li>
  <li>Offer ride</li>
  <li>Update Profile</li>
- <li>Weather</li>
+ <li><a href="weathermap.html">Weather</a></li>
  <li>Delete Post</li>
  </ul>
  <div id="sessiondiv">

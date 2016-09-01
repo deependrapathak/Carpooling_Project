@@ -27,7 +27,7 @@ $("#btnLogout").click(function(){
 		$.each(response.Message,function(uid,value){
 			content+="<h4><p class='pcomment'>"+value.fullname+" has commented as:</p>"+value.comment+"</h4>";
 		})
-		content+="<form action='InsertComment' method='post'>"+"<input type='textarea' name='txtcomment' /><br><input type='submit' value='comment'/></form>"
+		content+="<form action='InsertComment' method='post'><input type='hidden'><input type='textarea' name='txtcomment' /><br><input type='submit' value='comment'/></form>"
 		self.parent().append(content);
 		}).fail(function(xhr,status,exception){
 			console.log(1);
