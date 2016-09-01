@@ -35,6 +35,7 @@
 				</div>
 			</div>
 		</div>
+		<img alt="Car image" src="image/carr.png" width="100%" height="550px">
 	</div>
 	<script
 		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

@@ -1,6 +1,7 @@
 var x;
 var y;
 var z;
+var a;
 $(function(){
 	$.post("PostServlet").done(function(exp){
 			x=exp;
@@ -26,13 +27,15 @@ $("#btnLogout").click(function(){
 		$.each(response.Message,function(uid,value){
 			content+="<h4><p class='pcomment'>"+value.fullname+" has commented as:</p>"+value.comment+"</h4>";
 		})
-		content+="<form action='' method=''>"+"<input type='textarea' /><br><input type='submit' value='comment'/></form>"
+		content+="<form action='InsertComment' method='post'>"+"<input type='textarea' name='txtcomment' /><br><input type='submit' value='comment'/></form>"
 		self.parent().append(content);
 		}).fail(function(xhr,status,exception){
 			console.log(1);
 		})
 	})
-	$(".like").on("click",function(){
-		$(this).css('background-color','blue');
+	$(document.body).on("click",'.like',function(){
+		a=this;
+		var self=$(this);
+		self.css('background-color','blue');
 	})
 })

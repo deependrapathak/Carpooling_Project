@@ -12,6 +12,8 @@ body {
 
 #wrap {
   margin: 0 auto 30px;
+  background-image: url('image/carr.png');
+  
 }
 
 #regbar {
