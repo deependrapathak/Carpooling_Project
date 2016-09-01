@@ -24,17 +24,16 @@ if(sessr.equals("")||sessr==null){
 <div id="postcontainer">
 
 <div id="postmenu">
- <c:custom textColor='yellow' text='CARPOOLING'/> <br>
+<a href="home.jsp"> <c:custom textColor='yellow' text='CARPOOLING'/></a> <br>
  <ul id="ulmenu">
- <li>Ask Ride</li>
- <li>Offer ride</li>
+ 
  <li><a href="updateProfile.jsp">Update Profile</a></li>
  <li><a href="weathermap.html">Weather</a></li>
- <li>Delete Post</li>
+ <li><a href="DeletePost.jsp">Delete Post</a></li>
  </ul>
  <div id="sessiondiv">
  <%=session.getAttribute("reg") %><br>
- <button id="btnLogout">Logout</button>
+ <button id="aask">Ask Ride</button><button id="btnLogout">Logout</button>
  </div>
 </div>
 <div id="postdiv">
@@ -46,11 +45,19 @@ if(sessr.equals("")||sessr==null){
 </div>
 </div>
 <div id="ajdiv">
+<%String s=(String)request.getAttribute("msg"); %>
+<%
+if(s!=null){
+out.println(request.getAttribute("msg"));
+
+}
+%>
 <%-- <%for(int i=0;i<ar.size()-1;i++){
 	out.println("<div class='post'><p>"+ar.get(i)+"</p>"+
 "<a href='#' class='posta'>  Like   </a><a href='#' class='posta'>  Comment   </a></div>");
 } %> --%>
 <%-- <%=request.getAttribute("msg") %>--%>
 </div>
+<div id="piddiv"></div>
 </body>
 </html>
